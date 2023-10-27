@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  server:
+    build: .
+    container_name: server
+    command: sh -c ''
+    volumes:
+      - ./:/app
+    ports:
+      - "8800:8800"
+
+# database - sqlite
