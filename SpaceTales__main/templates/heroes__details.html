@@ -1,0 +1,35 @@
+{% extends 'index.html' %} {% block content %} {% autoescape off %}
+
+<div class="row">
+	<div class="col-10 offset-1">
+		{% if data %}
+		<h3 class="logoString_h3 text-center">'{{data.name}}'</h3>
+		<hr />
+		<span class="text-small"><b>Base information:</b></span>
+		<ul>
+			<li>Year of birth: {{data.birth_year}}</li>
+			<li>Gender: {{data.gender}}</li>
+			<li>Mass: {{data.mass}}</li>
+			<li>Eye color: {{data.eye_color}}</li>
+			<li>Hair color: {{data.hair_color}}</li>
+			<li>Height: {{data.height}}</li>
+			<li>Skin color: {{data.skin_color}}</li>
+		</ul>
+		<hr style="width: 50%" />
+		<!-- <p class="text-end">
+			<span class="text-small"><b>Release Date:</b></span> {{data.release_date}},
+			<span class="text-small"><b>Producer:</b></span> {{data.producer}}<br />
+		</p> -->
+		<div class="d-flex justify-content-center mt-5">
+			<a href="{% url 'heroes__list' %}" class="nav-link" title="Heroes list"><b>Heroes list</b></a>
+		</div>
+		{% else %}
+		<p class="text-center">Error occurred! <br />Please, try again later.</p>
+		<div class="d-flex justify-content-center mt-5">
+			<a href="{% url 'heroes__list' %}" class="nav-link" title="Heroes list"><b>Heroes list</b></a>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+{% endautoescape %} {% endblock %}

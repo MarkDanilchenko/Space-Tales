@@ -1,0 +1,36 @@
+{% extends 'index.html' %} {% block content %} {% autoescape off %}
+
+<div class="row">
+	<div class="col-10 offset-1">
+		{% if data %}
+		<h3 class="logoString_h3 text-center">'{{data.name}}'</h3>
+		<h3 class="logoString_h3 text-small text-center">Population: {{data.population}}</h3>
+		<hr />
+		<span class="text-small"><b>Base information:</b></span>
+		<ul>
+			<li>Climate: {{data.climate}}</li>
+			<li>Diameter: {{data.diameter}}</li>
+			<li>Gravitation: {{data.gravity}}</li>
+			<li>Orbital period: {{data.orbital_period}}</li>
+			<li>Rotation period: {{data.rotation_period}}</li>
+			<li>Surface water: {{data.surface_water}}</li>
+			<li>Terrain: {{data.terrain}}</li>
+		</ul>
+		<hr style="width: 50%" />
+		<!-- <p class="text-end">
+			<span class="text-small"><b>Release Date:</b></span> {{data.release_date}},
+			<span class="text-small"><b>Producer:</b></span> {{data.producer}}<br />
+		</p> -->
+		<div class="d-flex justify-content-center mt-5">
+			<a href="{% url 'planets__list' %}" class="nav-link" title="Planets list"><b>Planets list</b></a>
+		</div>
+		{% else %}
+		<p class="text-center">Error occurred! <br />Please, try again later.</p>
+		<div class="d-flex justify-content-center mt-5">
+			<a href="{% url 'planets__list' %}" class="nav-link" title="Planets list"><b>Planets list</b></a>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+{% endautoescape %} {% endblock %}

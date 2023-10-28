@@ -2,20 +2,20 @@
 
 <div class="row">
 	<div class="col-10 offset-1">
-		<h3 class="logoString_h3">Films list</h3>
+		<h3 class="logoString_h3">Planets list</h3>
 		{% if data %}
-		<p class="text-start text-small">Films found: <b>{{data.count}}</b>.</p>
+		<p class="text-start text-small">Planets found: <b>{{planets_count}}</b>.</p>
 		<hr />
 		<ol>
 			{% for i in data.results %}
 			<li>
-				<a href="{% url 'films__details' i.title %}" class="nav-link" title="Detailed information about: '{{i.title}}'">"{{i.title}}";</a>
+				<a href="{% url 'planets__details' i.name %}" class="nav-link" title="Detailed information about: '{{i.name}}'">"{{i.name}}";</a>
 			</li>
 			{% endfor %}
 		</ol>
 		<div class="d-flex justify-content-center mt-5"><a href="/" class="nav-link" title="Home page"><b>Home</b></a></div>
 		{% else %}
-		<p class="text-center">There are no films found! <br />Please, try again later.</p>
+		<p class="text-center">There are no planets found! <br />Please, try again later.</p>
 		<div class="d-flex justify-content-center mt-5"><a href="/" class="nav-link" title="Home page"><b>Home</b></a></div>
 		{% endif %}
 	</div>

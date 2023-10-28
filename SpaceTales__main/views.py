@@ -41,3 +41,57 @@ def films__details(request, title):
     response = requests.get(url)
     data = (response.json()).get("results")[0]
     return render(request, "films__details.html", {"data": data})
+
+
+# heroes functions
+# heroes functions
+# heroes functions
+def heroes__list(request):
+    url = rootURL + "people/"
+    response = requests.get(url)
+    data = response.json()
+    heroes_count = len(data.get('results'))
+    return render(request, "heroes__list.html", {"data": data, "heroes_count": heroes_count})
+
+
+def heroes__details(request, name):
+    url = rootURL + "people/" + "?search=" + name
+    response = requests.get(url)
+    data = (response.json()).get("results")[0]
+    return render(request, "heroes__details.html", {"data": data})
+
+
+# planets functions
+# planets functions
+# planets functions
+def planets__list(request):
+    url = rootURL + "planets/"
+    response = requests.get(url)
+    data = response.json()
+    planets_count = len(data.get('results'))
+    return render(request, "planets__list.html", {"data": data, "planets_count": planets_count})
+
+
+def planets__details(request, name):
+    url = rootURL + "planets/" + "?search=" + name
+    response = requests.get(url)
+    data = (response.json()).get("results")[0]
+    return render(request, "planets__details.html", {"data": data})
+
+
+# spaceships functions
+# spaceships functions
+# spaceships functions
+def spaceships__list(request):
+    url = rootURL + "starships/"
+    response = requests.get(url)
+    data = response.json()
+    spaceships_count = len(data.get('results'))
+    return render(request, "spaceships__list.html", {"data": data, "spaceships_count": spaceships_count})
+
+
+def spaceships__details(request, model):
+    url = rootURL + "starships/" + "?search=" + model
+    response = requests.get(url)
+    data = (response.json()).get("results")[0]
+    return render(request, "spaceships__details.html", {"data": data})
