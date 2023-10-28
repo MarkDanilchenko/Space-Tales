@@ -25,8 +25,9 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 RUN python3 -m venv venv && \
-    . venv/bin/activate && \
-    pip install --upgrade pip && \
+    . venv/bin/activate
+    #  && \
+    # pip install --upgrade pip && \
     
 COPY ./requirements.txt .
 
