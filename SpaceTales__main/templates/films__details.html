@@ -1,0 +1,24 @@
+{% extends 'index.html' %} {% block content %} {% autoescape off %}
+
+<div class="row">
+	<div class="col-10 offset-1">
+		{% if data %}
+		<h3 class="logoString_h3 text-center">'{{data.title}}'</h3>
+		<h3 class="logoString_h3 text-small text-center">Episode: {{data.episode_id}}</h3>
+		<hr />
+		<span class="text-small"><b>Short description:</b></span>
+		<p class="text-center">{{data.opening_crawl}}</p>
+		<hr style="width: 50%" />
+		<p class="text-end">
+			<span class="text-small"><b>Release Date:</b></span> {{data.release_date}},
+			<span class="text-small"><b>Producer:</b></span> {{data.producer}}<br />
+		</p>
+		<div class="d-flex justify-content-center mt-5"><a href="{% url 'films__list' %}" class="nav-link" title="Films list"><b>Films list</b></a></div>
+		{% else %}
+		<p class="text-center">Error occurred! <br />Please, try again later.</p>
+		<div class="d-flex justify-content-center mt-5"><a href="{% url 'films__list' %}" class="nav-link" title="Films list"><b>Films list</b></a></div>
+		{% endif %}
+	</div>
+</div>
+
+{% endautoescape %} {% endblock %}

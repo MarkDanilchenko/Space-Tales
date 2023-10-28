@@ -548,6 +548,9 @@ footer {
 .column:hover .card .txt p {
   font-size: 1rem;
 }
+.column:hover .card .txt h1 {
+  color: rgb(223, 14, 14);
+}
 .column:hover a {
   font-size: 1.2rem;
 }
@@ -556,7 +559,7 @@ footer {
 }
 
 .card {
-  min-height: 210px;
+  min-height: 250px;
   margin: 0;
   padding: 1.7rem 1rem;
   border: none;
@@ -573,6 +576,7 @@ footer {
 .card .txt h1 {
   font-size: 1.5rem;
   text-transform: uppercase;
+  text-shadow: 5px 5px 10px rgb(92, 92, 92);
 }
 .card .txt p {
   font-size: 0.7rem;

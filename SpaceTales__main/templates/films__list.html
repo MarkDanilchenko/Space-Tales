@@ -1,0 +1,23 @@
+{% extends 'index.html' %} {% block content %} {% autoescape off %}
+
+<div class="row">
+	<div class="col-10 offset-1">
+		<h3 class="logoString_h3">Films list</h3>
+		{% if data %}
+		<p class="text-start text-small">Films found: <b>{{data.count}}</b>.</p>
+		<hr />
+		<ol>
+			{% for i in data.results %}
+			<li>
+				<a href="{% url 'films__details' i.title %}" class="nav-link" title="Detailed information about: '{{i.title}}'">"{{i.title}}";</a>
+			</li>
+			{% endfor %}
+		</ol>
+
+		{% else %}
+		<p class="text-center">There are no films found! <br />Please, try again later.</p>
+		{% endif %}
+	</div>
+</div>
+
+{% endautoescape %} {% endblock %}

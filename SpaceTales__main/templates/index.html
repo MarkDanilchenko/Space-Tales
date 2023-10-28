@@ -28,7 +28,7 @@
 				{% if user.is_authenticated %}
 				<ul class="nav col-lg-auto col-12 mb-lg-0 mb-3 d-flex justify-content-center">
 					<li><a href="/" class="nav-link px-2" title="Home page">Home</a></li>
-					<li><a href="" class="nav-link px-2" title="Films page">Films</a></li>
+					<li><a href="{% url 'films__list' %}" class="nav-link px-2" title="Films page">Films</a></li>
 					<li><a href="" class="nav-link px-2" title="Heroes page">Heroes</a></li>
 					<li><a href="" class="nav-link px-2" title="Planets page">Planets</a></li>
 					<li><a href="" class="nav-link px-2" title="SpaceShips page">SpaceShips</a></li>
@@ -138,20 +138,19 @@
 						<h3 class="text-center">SpaceTales App</h3>
 					</div>
 				</div>
+				{% block content %}
 				<div class="container h-100 mb-3">
 					<div class="row align-middle">
 						<div class="col-md-6 col-lg-3 column">
 							<div class="card gr-1">
 								<div class="txt">
 									<h1>All Films</h1>
-									<p>
-										Findout all films with most important information about them.
-									</p>
+									<p>Findout all films with most important information about them.</p>
 								</div>
-								<a href="" class="nav-link" title="Films information">More</a>
+								<a href="{% url 'films__list' %}" class="nav-link" title="Films information">More</a>
 								<div class="ico-card">
 									<div class="">
-										<img src="{% static 'IMG/films.svg' %}" alt="Films logo">
+										<img src="{% static 'IMG/films.svg' %}" alt="Films logo" />
 									</div>
 								</div>
 							</div>
@@ -160,14 +159,12 @@
 							<div class="card gr-2">
 								<div class="txt">
 									<h1>Heroes</h1>
-									<p>
-										Browse all most popular heroes.
-									</p>
+									<p>Browse all most popular heroes.</p>
 								</div>
 								<a href="" class="nav-link" title="Heroes information">More</a>
 								<div class="ico-card">
 									<div class="">
-										<img src="{% static 'IMG/heroes.svg' %}" alt="Heroes logo">
+										<img src="{% static 'IMG/heroes.svg' %}" alt="Heroes logo" />
 									</div>
 								</div>
 							</div>
@@ -176,14 +173,12 @@
 							<div class="card gr-3">
 								<div class="txt">
 									<h1>Planets</h1>
-									<p>
-										Browse all most important planets.
-									</p>
+									<p>Browse all most important planets.</p>
 								</div>
 								<a href="" class="nav-link" title="Planets information">More</a>
 								<div class="ico-card">
 									<div class="">
-										<img src="{% static 'IMG/planets.svg' %}" alt="Planets logo">
+										<img src="{% static 'IMG/planets.svg' %}" alt="Planets logo" />
 									</div>
 								</div>
 							</div>
@@ -192,22 +187,18 @@
 							<div class="card gr-4">
 								<div class="txt">
 									<h1>SpaceShips</h1>
-									<p>
-										Browse all most important space ships.
-									</p>
+									<p>Browse all most important space ships.</p>
 								</div>
 								<a href="" class="nav-link" title="Space ships information">More</a>
 								<div class="ico-card">
 									<div class="">
-										<img src="{% static 'IMG/spaceShips.svg' %}" alt="SpaceShips logo">
+										<img src="{% static 'IMG/spaceShips.svg' %}" alt="SpaceShips logo" />
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				{% block content %}
-				<!-- content -->
 				{% endblock %}
 			</div>
 			{% else %}
